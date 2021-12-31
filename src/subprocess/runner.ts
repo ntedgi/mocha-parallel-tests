@@ -2,7 +2,7 @@ import Mocha from 'mocha';
 
 import MessageChannel from './message-channel';
 import { getReporterFactory } from './reporter';
-import { applyCompilers, applyDelay, applyGrepPattern, applyNoTimeouts, applyRequires, applyTimeouts, applyFiles, applyUi } from '../util';
+import { applyCompilers, applyDelay, applyGrepPattern, applyRequires, applyTimeouts, applyFiles, applyUi } from '../util';
 import applyExit from './options/exit';
 import applyFullTrace from './options/full-trace';
 import { SUITE_OWN_OPTIONS } from '../config';
@@ -23,9 +23,6 @@ export function runMocha(file: string, options: ThreadOptions, debugSubprocess: 
 
   // --grep
   applyGrepPattern(mocha, options.grep);
-
-  // --enableTimeouts
-  applyNoTimeouts(mocha, options.enableTimeouts);
 
   // --exit
   const onComplete = applyExit(channel, options.exitImmediately);

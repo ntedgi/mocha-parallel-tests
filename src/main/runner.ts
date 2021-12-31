@@ -16,7 +16,7 @@ export default class RunnerMain extends Runner {
   private subprocessTestResults: SubprocessResult;
 
   constructor(rootSuite: Suite) {
-    super(rootSuite, false);
+    super(rootSuite, { delay: false });
     this.rootSuite = rootSuite;
 
     // in mocha@6 assigning "stats" field to the runner is extracted into a separate function
@@ -167,7 +167,7 @@ export default class RunnerMain extends Runner {
           this.emit('waiting', this.rootSuite);
           continue;
         }
-        
+
         if (!isEventWithId(data)) {
           continue;
         }

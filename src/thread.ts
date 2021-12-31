@@ -8,7 +8,6 @@ export interface ThreadOptions {
   bail?: boolean;
   compilers: string[];
   delay: boolean;
-  enableTimeouts?: boolean;
   exitImmediately: boolean;
   fullTrace: boolean;
   grep?: string;

@@ -199,7 +199,7 @@ applySlow(mocha, argv.slow);
 // --timeout
 applyTimeout(mocha, argv.timeout);
 
-if(argv.ui) {
+if (argv.ui) {
   mocha.setUi(argv.ui);
 }
 

@@ -3,7 +3,6 @@ export const SUBPROCESS_RETRIED_SUITE_ID = '__mpt_suiteId_';
 
 export const SUITE_OWN_OPTIONS = [
   'timeout',
-  'enableTimeouts',
   'slow',
   'bail',
   'retries',

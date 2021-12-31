@@ -56,19 +56,17 @@ export default class MochaWrapper extends Mocha {
   run(onComplete?: (failures: number) => void): RunnerMain {
     const {
       asyncOnly,
-      ignoreLeaks,
       forbidOnly,
       forbidPending,
-      fullStackTrace,
+      fullTrace,
     } = this.options;
 
     const rootSuite = this.suite as Suite;
 
     const runner = new RunnerMain(rootSuite);
-    runner.ignoreLeaks = ignoreLeaks !== false;
     runner.forbidOnly = forbidOnly;
     runner.forbidPending = forbidPending;
-    runner.fullStackTrace = fullStackTrace;
+    runner.fullStackTrace = fullTrace;
     runner.asyncOnly = asyncOnly;
 
     const taskManager = new TaskManager<SubprocessResult>(this.maxParallel);
@@ -196,7 +194,7 @@ export default class MochaWrapper extends Mocha {
       options.exitImmediately = true;
     }
 
-    if (this.options.fullStackTrace) {
+    if (this.options.fullTrace) {
       options.fullTrace = true;
     }
 

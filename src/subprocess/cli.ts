@@ -9,7 +9,6 @@ interface Args {
   compilers: string[];
   delay?: boolean;
   grep?: string;
-  enableTimeouts?: boolean;
   exit?: boolean;
   ['full-trace']?: boolean;
   require: string[];
@@ -30,7 +29,6 @@ function threadOptionsFromArgv(argv: Args): ThreadOptions {
     bail: argv.bail,
     compilers: argv.compilers,
     delay: argv.delay || false,
-    enableTimeouts: argv.enableTimeouts,
     exitImmediately: argv.exit || false,
     fullTrace: argv['full-trace'] || false,
     grep: argv.grep,
@@ -52,7 +50,6 @@ const argv: Args = yargs
   })
   .boolean('delay')
   .string('grep')
-  .boolean('enableTimeouts')
   .option('exit', {
     boolean: true,
   })

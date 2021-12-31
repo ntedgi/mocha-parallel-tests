@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { lookupFiles: mochaLookupFiles } = require('mocha/lib/utils');
+const lookupFiles = require('mocha/lib/cli/lookup-files');
 
 export default function getFilesList(rest: string[], extensions: string[], recursive: boolean): string[] {
   const filesList = rest.length ? rest : ['test'];
@@ -7,7 +7,7 @@ export default function getFilesList(rest: string[], extensions: string[], recur
 
   for (const file of filesList) {
     try {
-      const newFiles = mochaLookupFiles(file, extensions, recursive) as string[] | string;
+      const newFiles = lookupFiles(file, extensions, recursive) as string[] | string;
       const newFilesList = Array.isArray(newFiles) ? newFiles : [newFiles];
 
       output.push(...newFilesList);

@@ -28,7 +28,7 @@ export function setProcessExitListeners() {
 export function applyFiles(mocha: Mocha, files: string | string[]) {
   const fileList: string[] = Array.isArray(files) ? files : [files];
 
-  if(fileList) {
+  if (fileList) {
     mocha.files = fileList.concat(mocha.files);
   }
 }
@@ -93,7 +93,7 @@ export function applyGrepPattern(mocha: Mocha, stringPattern?: string) {
 
 export function applyNoTimeouts(mocha: Mocha, allowTimeouts?: boolean) {
   if (allowTimeouts === false) {
-    mocha.enableTimeouts(false);
+    mocha.timeout(0);
   }
 }
 
@@ -104,7 +104,7 @@ export function applyTimeouts(mocha: Mocha, timeout?: number) {
 }
 
 export function applyUi(mocha: Mocha, ui?: string) {
-  if(ui) {
+  if (ui) {
     mocha.ui(ui);
   }
 }
