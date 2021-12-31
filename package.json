@@ -1,8 +1,8 @@
 {
-  "name": "mocha-parallel-tests",
-  "version": "2.3.0",
-  "homepage": "https://github.com/mocha-parallel/mocha-parallel-tests",
-  "description": "Run mocha tests in parallel",
+  "name": "mocha9-parallel-tests",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ntedgi/mocha-parallel-tests",
+  "description": "Run mocha 9.x.x tests in parallel",
   "main": "./dist/main/mocha.js",
   "module": "./dist/main/mocha.js",
   "bin": {
@@ -17,7 +17,8 @@
     "Nikolay Basov",
     "Vadim Kolontsov <vadim@kolontsov.com>",
     "Hennadii Bulakh",
-    "Jeroen Claassens <j.claassens@cgi.com>"
+    "Jeroen Claassens <j.claassens@cgi.com>",
+    "Naor Tedgi <naor.tedgi@gmail.com>"
   ],
   "dependencies": {
     "circular-json": "^0.5.9",
@@ -27,10 +28,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mocha-parallel/mocha-parallel-tests.git"
+    "url": "git+https://github.com/ntedgi/mocha-parallel-tests.git"
   },
   "bugs": {
-    "url": "https://github.com/mocha-parallel/mocha-parallel-tests/issues"
+    "url": "https://github.com/ntedgi/mocha-parallel-tests/issues"
   },
   "files": [
     "bin",
@@ -56,19 +57,11 @@
     "prepublishOnly": "npm run clean && npm run build",
     "pretest": "npm run prepublishOnly",
     "test": "bash test/index.sh",
-    "test:ci": "npm run lint && npm run test:mocha-3 && npm run test:mocha-4 && npm run test:mocha-5 && npm run test:mocha-6 && npm run test:mocha-7",
-    "test:mocha-3": "npm install mocha@3 --no-save && npm test",
-    "test:mocha-4": "npm install mocha@4 --no-save && npm test",
-    "test:mocha-5": "npm install mocha@5 --no-save && npm test",
-    "test:mocha-6": "npm install mocha@6 --no-save && npm test",
-    "test:mocha-7": "npm install mocha@7 --no-save && npm test"
+    "test:ci": "npm run lint && npm run test"
   },
   "license": "MIT",
   "engines": {
     "node": ">=8"
-  },
-  "peerDependencies": {
-    "mocha": "3.0.0 - 7.x.x"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -96,9 +89,6 @@
     "sinon": "^7.5.0",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
-  },
-  "funding": {
-    "url": "https://github.com/sponsors/1999"
   },
   "husky": {
     "hooks": {
