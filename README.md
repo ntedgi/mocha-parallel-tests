@@ -1,7 +1,5 @@
-# mocha-parallel-tests
-
-PROJECT IS NOT SUPPORTED ANYMORE. [MAINTAINERS ARE WELCOME](https://github.com/mocha-parallel/mocha-parallel-tests/issues/308).
-
+my personal fork that support mocha 9.x.x it looks like the original project is stop beeing maintend 
+# mocha-9-parallel-tests 
 `mocha-parallel-tests` is a test runner for tests written with `mocha` testing framework which allows you to run them in parallel. `mocha-parallel-tests` executes **each of your test files in a separate process** while maintaining the output structure of `mocha`. Compared to the other tools which try to parallelize `mocha` tests execution, `mocha-parallel-tests` doesn't require you to write the code in a different way or use some specific APIs - just run your tests with `mocha-parallel-tests` instead of `mocha` and you will see the difference. Or if you prefer to use `mocha` programmatic API replace it with `mocha-parallel-tests` default export and you're done!
 
 If you're using Node.JS >= 12 your tests execution will be even faster because `mocha-parallel-tests` supports running tests with Node.JS worker threads API: instead of creating fully fledged Node.JS processes `mocha-parallel-tests` runs your tests in lighter threads within the same process. This results in a faster tests processing and less memory consumption.
